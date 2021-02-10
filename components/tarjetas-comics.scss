@@ -1,21 +1,35 @@
 @import '../abstracts/abstracts.scss';
 
-.contenedor-tarjeta{
-    width: 200px;
-    height: 350px;
-   @extend %centrar-flex-columna; 
-   border: 1px black solid;
-   margin: 5px;
-}
+.contenedor-tarjetas{
+    display: flex;
+    flex-wrap: wrap;
 
-.contenedor-comic{
-    height: 80%;
-    width: 150px;
-    background-color: blue;
-}
+    article{
 
-h3{
-    font-family: $tipografia-body;
-    font-size: 15px;
-    font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        width: 180px;
+        height: auto;
+
+        .image-comic{
+            width: 80%;
+            box-shadow: 0 26px 24px -16px rgb(0 0 0 / 40%);
+            transform: translateY(0);
+            transition: 0.2s;
+           img{
+           width: 100%;
+           height: auto;
+           } 
+        }
+        
+        .comic-title{
+            width: 170px;
+            font-family: $tipografia-body;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    }
+    
 }
