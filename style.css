@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+.contenedor-tarjeta, footer, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  background-color: #020202;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Bangers";
+  font-size: 50px;
+  margin: 5px;
+  background-color: red;
+  color: white;
+}
+
+.contenedor-imagen-header {
+  width: 100%;
+  min-height: 400px;
+  background-image: url(imagenes/heroes.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.contenedor-imagen-header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contenedor-tarjeta, footer, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+}
+footer h2 {
+  color: white;
+  font-family: "Roboto";
+  font-size: 15px;
+}
+footer h2 i {
+  width: 30px;
+  height: 30px;
+  color: red;
+}
+
+.contenedor-tarjeta, header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contenedor-tarjeta {
+  width: 200px;
+  height: 350px;
+  border: 1px black solid;
+  margin: 5px;
+}
+
+.contenedor-comic {
+  height: 80%;
+  width: 150px;
+  background-color: blue;
+}
+
+h3 {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */

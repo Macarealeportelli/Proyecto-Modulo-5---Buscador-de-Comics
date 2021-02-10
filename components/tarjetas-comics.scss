@@ -1,0 +1,21 @@
+@import '../abstracts/abstracts.scss';
+
+.contenedor-tarjeta{
+    width: 200px;
+    height: 350px;
+   @extend %centrar-flex-columna; 
+   border: 1px black solid;
+   margin: 5px;
+}
+
+.contenedor-comic{
+    height: 80%;
+    width: 150px;
+    background-color: blue;
+}
+
+h3{
+    font-family: $tipografia-body;
+    font-size: 15px;
+    font-weight: 500;
+}

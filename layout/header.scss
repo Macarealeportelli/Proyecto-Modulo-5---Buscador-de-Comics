@@ -1,0 +1,36 @@
+@import '../abstracts/abstracts.scss';
+
+
+header {
+    width: 100%;
+    background-color: #020202;
+    @extend %centrar-flex-columna;
+    margin: 0;
+}
+
+h1{
+    font-family: $tipografia-logo;
+    font-size: 50px;
+    margin: 5px;
+    background-color: red;
+    color: white;
+}
+
+.contenedor-imagen-header{
+    width: 100%;
+    min-height: 400px;
+    background-image: url(imagenes/heroes.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.contenedor-imagen-header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
