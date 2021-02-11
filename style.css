@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
-.contenedor-tarjeta, footer, header {
+footer, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@ header {
 
 h1 {
   font-family: "Bangers";
-  font-size: 50px;
+  font-size: 40px;
   margin: 5px;
   background-color: red;
   color: white;
@@ -42,7 +42,7 @@ h1 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.contenedor-tarjeta, footer, header {
+footer, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,30 +65,93 @@ footer h2 i {
   color: red;
 }
 
-.contenedor-tarjeta, header, footer {
+.seccion-principal {
+  font-family: "Roboto";
+}
+
+header, footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.contenedor-tarjeta {
-  width: 200px;
-  height: 350px;
-  border: 1px black solid;
-  margin: 5px;
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
 }
-
-.contenedor-comic {
-  height: 80%;
-  width: 150px;
-  background-color: blue;
+.contenedor-tarjetas article {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 180px;
+  height: auto;
 }
-
-h3 {
+.contenedor-tarjetas article .image-comic {
+  width: 80%;
+  box-shadow: 0 26px 24px -16px rgba(0, 0, 0, 0.4);
+  transform: translateY(0);
+  transition: 0.2s;
+}
+.contenedor-tarjetas article .image-comic img {
+  width: 100%;
+  height: auto;
+}
+.contenedor-tarjetas article .comic-title {
+  width: 170px;
   font-family: "Roboto";
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.contenedor-buscador {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-buscador .filtros-busqueda {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.contenedor-buscador .filtros-busqueda .buscador-input {
+  border: 0;
+  border-bottom: 2px solid #151515;
+  width: 140%;
+  padding: 5px 35px;
+  border-radius: 0;
+  font-size: 26px;
+  box-sizing: border-box;
+}
+.contenedor-buscador .filtros-busqueda .busquedas-por {
+  width: 40%;
+  padding: 5px 35px;
+  margin-left: 10px;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor-buscador .filtros-busqueda button {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  background-color: #151515;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: transparent;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+* {
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

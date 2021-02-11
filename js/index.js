@@ -1,4 +1,4 @@
-fetch("https://gateway.marvel.com/v1/public/comics?apikey=0b77a943b27f841e71a40bb1c01f879d")
+fetch("https://gateway.marvel.com/v1/public/comics?apikey=0b77a943b27f841e71a40bb1c01f879d&orderBy=title")
   .then((res) => {
     return res.json()
   })
