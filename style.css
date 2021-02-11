@@ -166,22 +166,21 @@ header, footer {
   display: flex;
   flex-direction: column;
   width: calc(100% / 6 - 2 * 10px);
-  margin: 0 10px 40px;
+  height: 250px;
 }
 .contenedor-tarjetas article .image-character {
   height: 100%;
   transition: 0.2s;
+  border-bottom: 3px solid red;
 }
 .contenedor-tarjetas article .image-character img {
   width: 100%;
 }
 .contenedor-tarjetas article .character-name {
-  font-family: "Roboto";
-  font-size: 14px;
-  font-weight: bold;
   color: whitesmoke;
-  background-color: black;
-  margin-top: 20px;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
 }
 
 * {
