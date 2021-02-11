@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 footer, header {
   display: flex;
   justify-content: center;
@@ -148,6 +149,39 @@ header, footer {
   margin: 0 5px;
   cursor: pointer;
   transition: 0.2s;
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contenedor-tarjetas article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  margin: 0 10px 40px;
+}
+.contenedor-tarjetas article .image-character {
+  height: 100%;
+  transition: 0.2s;
+}
+.contenedor-tarjetas article .image-character img {
+  width: 100%;
+}
+.contenedor-tarjetas article .character-name {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: black;
+  margin-top: 20px;
 }
 
 * {
