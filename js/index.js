@@ -56,16 +56,27 @@ const creaTarjetasPersonajes=()=>{
 
 
 
-const comicsPorPagina = 20;
-let paginaActual = 0;
+// const comicsPorPagina = 20;
+// let paginaActual = 0;
 
-const buscarComics = () =>{
+// const buscarComics = (url, paginaActual, identificacion, orden) =>{
 
-   creaTarjetasComics()
-   creaTarjetasPersonajes()
-}
+//     fetch(`${urlBase + url}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
+//     .then((res)=>{
+//         return res.json()
+//     })
+//     .then((data)=>{
+//         console.log(data)
+//         comics = data.data.results
+//         const seccion = document.querySelector('section')
+//         seccion.innerHTML = ''
+//        comics.map((comic)=>{
+//             seccion.innerHTML += `<p>${comic[identificacion]}</p>`
+//         })
+//     })
+// }
 
-// buscarComics("comics" , paginaActual , "title")
+// // buscarComics("comics" , paginaActual , "title")
 
 const seleccionTipo = document.getElementById('buscar-por-tipo')
 console.log(seleccionTipo)
@@ -78,33 +89,35 @@ console.log(seleccionOrden.value)
 const botonBuscar = document.getElementById('boton-buscar')
 console.log(botonBuscar)
 
-botonBuscar.onclick=()=>{
-  console.log('me hicieron click')
-    if (seleccionTipo.value === "comics"){
-        buscarComics("comics", paginaActual, "title")
-        seleccionOrden.onclick=()=>{
-            if(seleccionOrden.value === "a-z"){
-                buscarComics("comics", paginaActual,  "title")
+
+
+
+// seleccionTipo.onclick=()=>{
+//     if (seleccionTipo.value === "comics"){
+//         buscarComics("comics", paginaActual, "title" , "title")
+//         seleccionOrden.onclick=()=>{
+//             if(seleccionOrden.value === "a-z"){
+//                 buscarComics("comics", paginaActual, "title" , "title")
               
-             }
-            if(seleccionOrden.value=== "z-a"){
-                buscarComics("comics", paginaActual, "-title")
+ //             }
+//             if(seleccionOrden.value=== "z-a"){
+//                 buscarComics("comics", paginaActual, "title" , "-title")
                 
-            }
-        }
-    }
-    if (seleccionTipo.value === "personajes"){
-        buscarComics("characters", paginaActual,  "name")
-        seleccionOrden.onclick=()=>{
-            if(seleccionOrden.value === "a-z"){
-                buscarComics("characters", paginaActual,  "name")
+//             }
+//         }
+//     }
+//     if (seleccionTipo.value === "personajes"){
+//         buscarComics("characters", paginaActual, "name", "name")
+//         seleccionOrden.onclick=()=>{
+//             if(seleccionOrden.value === "a-z"){
+//                 buscarComics("characters", paginaActual, "name" , "name")
               
-            }
-            if(seleccionOrden.value=== "z-a"){
-                buscarComics("characters", paginaActual,  "-name")
+//             }
+//             if(seleccionOrden.value=== "z-a"){
+//                 buscarComics("characters", paginaActual, "name" , "-name")
                 
-            }
-        }
-    }
-}
+//             }
+//         }
+//     }
+// }
 
