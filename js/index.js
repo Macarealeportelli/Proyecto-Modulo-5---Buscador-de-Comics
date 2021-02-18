@@ -2,6 +2,7 @@ const urlBaseComics = "https://gateway.marvel.com/v1/public/comics";
 const urlBasePersonajes = "https://gateway.marvel.com/v1/public/characters";
 const apiKey = "0b77a943b27f841e71a40bb1c01f879d";
 
+// let comics = '';
 const comicsPorPagina = 20;
 let paginaActual = 0;
 
@@ -16,6 +17,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
 
       const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
+      seccionTarjetas.innerHTML = ''
       comics.map((comic) => {
 
         seccionTarjetas.innerHTML += `
@@ -29,7 +31,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
     })
 }
 
-// creaTarjetasComics('title')
+creaTarjetasComics(0, 'title')
 
 const creaTarjetasPersonajes = (paginaActual, orden) => {
   fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
@@ -42,6 +44,7 @@ const creaTarjetasPersonajes = (paginaActual, orden) => {
 
       const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
+      seccionTarjetas.innerHTML = ''
       personajes.map((personaje) => {
 
         seccionTarjetas.innerHTML += `
