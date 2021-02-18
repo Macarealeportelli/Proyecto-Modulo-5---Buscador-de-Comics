@@ -2,8 +2,11 @@ const urlBaseComics = "https://gateway.marvel.com/v1/public/comics";
 const urlBasePersonajes = "https://gateway.marvel.com/v1/public/characters";
 const apiKey = "0b77a943b27f841e71a40bb1c01f879d";
 
-const creaTarjetasComics = (orden) => {
-  fetch(`${urlBaseComics}?apikey=${apiKey}&orderBy=${orden}`)
+const comicsPorPagina = 20;
+let paginaActual = 0;
+
+const creaTarjetasComics = (paginaActual, orden) => {
+  fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
     .then((res) => {
       return res.json()
     })
@@ -28,8 +31,8 @@ const creaTarjetasComics = (orden) => {
 
 // creaTarjetasComics('title')
 
-const creaTarjetasPersonajes = (orden) => {
-  fetch(`${urlBasePersonajes}?apikey=${apiKey}&orderBy=${orden}`)
+const creaTarjetasPersonajes = (paginaActual, orden) => {
+  fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
     .then((res) => {
       return res.json()
     })
@@ -57,36 +60,8 @@ const creaTarjetasPersonajes = (orden) => {
 
 
 
-const comicsPorPagina = 20;
-let paginaActual = 0;
 
-const buscarComics = (paginaActual, orden) => {
 
-  fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      creaTarjetasComics(orden)
-    })
-}
-
-// buscarComics(paginaActual, "title")
-
-const buscarPersonajes = (paginaActual, orden) => {
-
-  fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      creaTarjetasPersonajes(orden)
-    })
-}
-
-// buscarPersonajes( paginaActual , "name")
 
 const seleccionTipo = document.getElementById('buscar-por-tipo')
 // console.log(seleccionTipo)
@@ -101,25 +76,25 @@ const botonBuscar = document.getElementById('boton-buscar')
 
 const ordenarComicsPor = () => {
   if (seleccionOrden.value === "z-a") {
-    buscarComics(paginaActual, "-title")
+    creaTarjetasComics(paginaActual, "-title")
     console.log('soy comics estoy de la z a la a')
   }
   else {
-    buscarComics(paginaActual, "title")
+    creaTarjetasComics(paginaActual, "title")
     console.log('soy comics estoy de la a a la z')
 
   }
 }
 
-ordenarComicsPor()
+// ordenarComicsPor()
 
 const ordenarPersonajesPor = () => {
   if (seleccionOrden.value === "z-a") {
-    buscarPersonajes(paginaActual, "-name")
+    creaTarjetasPersonajes(paginaActual, "-name")
     console.log('soy personaje estoy de la z a la a')
   }
   else {
-    buscarPersonajes(paginaActual, "name")
+    creaTarjetasPersonajes(paginaActual, "name")
     console.log('soy personaje estoy de la a a la z')
   }
 }
@@ -127,11 +102,11 @@ const ordenarPersonajesPor = () => {
 botonBuscar.onclick = () => {
   console.log('me hicieron click')
   if (seleccionTipo.value === "comics") {
-    buscarComics(paginaActual, "title")
+    // creaTarjetasComics(paginaActual, "title")
     ordenarComicsPor()
   }
   if (seleccionTipo.value === "personajes") {
-    buscarPersonajes(paginaActual, "name")
+    // creaTarjetasPersonajes(paginaActual, "name")
     ordenarPersonajesPor()
   }
 }
