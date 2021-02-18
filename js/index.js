@@ -99,36 +99,40 @@ const seleccionOrden = document.getElementById('buscar-por-orden')
 const botonBuscar = document.getElementById('boton-buscar')
 // console.log(botonBuscar)
 
+const ordenarComicsPor = () => {
+  if (seleccionOrden.value === "z-a") {
+    buscarComics(paginaActual, "-title")
+    console.log('soy comics estoy de la z a la a')
+  }
+  else {
+    buscarComics(paginaActual, "title")
+    console.log('soy comics estoy de la a a la z')
 
+  }
+}
 
+ordenarComicsPor()
+
+const ordenarPersonajesPor = () => {
+  if (seleccionOrden.value === "z-a") {
+    buscarPersonajes(paginaActual, "-name")
+    console.log('soy personaje estoy de la z a la a')
+  }
+  else {
+    buscarPersonajes(paginaActual, "name")
+    console.log('soy personaje estoy de la a a la z')
+  }
+}
 
 botonBuscar.onclick = () => {
   console.log('me hicieron click')
   if (seleccionTipo.value === "comics") {
     buscarComics(paginaActual, "title")
-
-    if (seleccionOrden.value === "a-z") {
-      buscarComics(paginaActual, "title")
-
-    }
-    if (seleccionOrden.value === "z-a") {
-      buscarComics(paginaActual, "-title")
-
-    }
-
+    ordenarComicsPor()
   }
   if (seleccionTipo.value === "personajes") {
     buscarPersonajes(paginaActual, "name")
-
-    if (seleccionOrden.value === "a-z") {
-      buscarPersonajes(paginaActual, "name")
-
-    }
-    if (seleccionOrden.value === "z-a") {
-      buscarPersonajes(paginaActual, "-name")
-
-    }
-
+    ordenarPersonajesPor()
   }
 }
 
