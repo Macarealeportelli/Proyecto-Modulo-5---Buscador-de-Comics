@@ -67,10 +67,12 @@ footer h2 {
   font-family: "Roboto";
   font-size: 15px;
 }
-footer h2 i {
+
+.fa-heart {
   width: 30px;
   height: 30px;
   color: red;
+  font-size: 25px;
 }
 
 .seccion-principal {
@@ -139,12 +141,21 @@ header, footer {
 }
 .contenedor-buscador .filtros-busqueda .buscador-input {
   border: 0;
+  margin-right: 20px;
   border-bottom: 2px solid #151515;
   width: 120%;
   padding: 5px 35px;
   border-radius: 0;
   font-size: 26px;
   box-sizing: border-box;
+  position: relative;
+}
+.contenedor-buscador .filtros-busqueda .fa-search {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  position: absolute;
+  top: 540px;
 }
 .contenedor-buscador .filtros-busqueda .busquedas-por {
   width: 40%;
