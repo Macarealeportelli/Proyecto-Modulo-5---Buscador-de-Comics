@@ -148,6 +148,7 @@ const ordenarPersonajesPor = () => {
 
 
 botonBuscar.onclick = () => {
+  paginaActual = 0
   console.log('me hicieron click')
   if (seleccionTipo.value === "comics") {
     ordenarComicsPor()
