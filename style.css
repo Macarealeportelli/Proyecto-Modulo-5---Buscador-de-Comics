@@ -111,11 +111,12 @@ header, footer {
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-around;
 }
 .contenedor-tarjetas article {
   display: flex;
   flex-direction: column;
-  margin: 20px;
   width: 180px;
   height: auto;
 }
@@ -130,7 +131,7 @@ header, footer {
   height: auto;
 }
 .contenedor-tarjetas article .comic-title {
-  width: 170px;
+  width: 80%;
   font-family: "Roboto";
   font-size: 14px;
   font-weight: bold;

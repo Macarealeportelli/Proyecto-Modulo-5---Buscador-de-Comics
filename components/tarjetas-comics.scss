@@ -3,20 +3,24 @@
 .contenedor-tarjetas{
     display: flex;
     flex-wrap: wrap;
-
+    margin: 20px;
+    justify-content: space-around;
+    
+   
     article{
 
         display: flex;
         flex-direction: column;
-        margin: 20px;
         width: 180px;
         height: auto;
+    
 
         .image-comic{
             width: 80%;
             box-shadow: 0 26px 24px -16px rgb(0 0 0 / 40%);
             transform: translateY(0);
             transition: 0.2s;
+
            img{
            width: 100%;
            height: auto;
@@ -24,7 +28,7 @@
         }
         
         .comic-title{
-            width: 170px;
+            width: 80%;
             font-family: $tipografia-body;
             font-size: 14px;
             font-weight: bold;
