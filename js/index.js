@@ -10,113 +10,114 @@ const botonBuscar = document.getElementById('boton-buscar');
 
 const comicsPorPagina = 20;
 let paginaActual = 0;
+let total = 0;
 
 const creaTarjetasComics = (paginaActual, orden) => {
-  if (inputBuscador.value != ''){
-  fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&titleStartsWith=${inputBuscador.value}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      console.log('busco comics por texto')
-      comics = data.data.results
+  if (inputBuscador.value != '') {
+    fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&titleStartsWith=${inputBuscador.value}`)
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data)
+        console.log('busco comics por texto')
+        comics = data.data.results
 
-      // const total = data.data.total
-      const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
+        total = data.data.total
+        const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
-      seccionTarjetas.innerHTML = ''
-      comics.map((comic) => {
+        seccionTarjetas.innerHTML = ''
+        comics.map((comic) => {
 
-        seccionTarjetas.innerHTML += `
+          seccionTarjetas.innerHTML += `
       <article>
       <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
       <div class="comic-title">${comic.title}</div>
       </article> 
       `;
 
+        })
       })
-    })
   }
   else {
     fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      comics = data.data.results
-     
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data)
+        comics = data.data.results
 
-      const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
+        total = data.data.total
+        const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
-      seccionTarjetas.innerHTML = ''
-      comics.map((comic) => {
+        seccionTarjetas.innerHTML = ''
+        comics.map((comic) => {
 
-        seccionTarjetas.innerHTML += `
+          seccionTarjetas.innerHTML += `
       <article>
       <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
       <div class="comic-title">${comic.title}</div>
       </article> 
       `;
 
+        })
       })
-    })
   }
 }
 
 creaTarjetasComics(0, 'title')
 
 const creaTarjetasPersonajes = (paginaActual, orden) => {
- 
-  if (inputBuscador.value != ''){
-  fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&nameStartsWith=${inputBuscador.value}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      console.log('busco personajes por texto')
-      personajes = data.data.results
 
-      const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
+  if (inputBuscador.value != '') {
+    fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&nameStartsWith=${inputBuscador.value}`)
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data)
+        console.log('busco personajes por texto')
+        personajes = data.data.results
 
-      seccionTarjetas.innerHTML = ''
-      personajes.map((personaje) => {
+        const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
-        seccionTarjetas.innerHTML += `
+        seccionTarjetas.innerHTML = ''
+        personajes.map((personaje) => {
+
+          seccionTarjetas.innerHTML += `
         <article>
         <div class="image-character"><img src="${personaje.thumbnail.path}.jpg" alt=""></div>
         <div class="character-name">${personaje.name}</div>
         </article> 
         `;
 
+        })
       })
-    })
   }
   else {
     fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
-    .then((res) => {
-      return res.json()
-    })
-    .then((data) => {
-      console.log(data)
-      personajes = data.data.results
+      .then((res) => {
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data)
+        personajes = data.data.results
 
-      const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
+        const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
-      seccionTarjetas.innerHTML = ''
-      personajes.map((personaje) => {
+        seccionTarjetas.innerHTML = ''
+        personajes.map((personaje) => {
 
-        seccionTarjetas.innerHTML += `
+          seccionTarjetas.innerHTML += `
         <article>
         <div class="image-character"><img src="${personaje.thumbnail.path}.jpg" alt=""></div>
         <div class="character-name">${personaje.name}</div>
         </article> 
         `;
 
+        })
       })
-    })
 
   }
 }
@@ -149,12 +150,12 @@ const ordenarPersonajesPor = () => {
 botonBuscar.onclick = () => {
   console.log('me hicieron click')
   if (seleccionTipo.value === "comics") {
-       ordenarComicsPor()
+    ordenarComicsPor()
   }
   if (seleccionTipo.value === "personajes") {
-       ordenarPersonajesPor()
+    ordenarPersonajesPor()
   }
- 
+
 }
 
 // ******************************************** FUNCIONALIDAD DEL PAGINADO ************************************************
@@ -170,26 +171,67 @@ const botonUltimaPagina = document.getElementById('ultima-pagina');
 // console.log(botonSiguientePagina)
 // console.log(botonUltimaPagina)
 
-botonSiguientePagina.onclick = () =>{
+botonSiguientePagina.onclick = () => {
   paginaActual++
-  creaTarjetasComics(paginaActual, 'title')
+  if (seleccionTipo.value === "comics" && seleccionOrden.value === "a-z") {
+    creaTarjetasComics(paginaActual, 'title')
+  }
+  else if (seleccionTipo.value === "comics" && seleccionOrden.value === "z-a") {
+    creaTarjetasComics(paginaActual, '-title')
+  }
+  else if (seleccionTipo.value === "personajes" && seleccionOrden.value === "a-z") {
+    creaTarjetasPersonajes(paginaActual, 'name')
+  } else {
+    creaTarjetasPersonajes(paginaActual, '-name')
+  }
+
 }
 
 
-botonPaginaAnterior.onclick = () =>{
+botonPaginaAnterior.onclick = () => {
   paginaActual--
-  creaTarjetasComics(paginaActual, 'title')
+  if (seleccionTipo.value === "comics" && seleccionOrden.value === "a-z") {
+    creaTarjetasComics(paginaActual, 'title')
+  }
+  else if (seleccionTipo.value === "comics" && seleccionOrden.value === "z-a") {
+    creaTarjetasComics(paginaActual, '-title')
+  }
+  else if (seleccionTipo.value === "personajes" && seleccionOrden.value === "a-z") {
+    creaTarjetasPersonajes(paginaActual, 'name')
+  } else {
+    creaTarjetasPersonajes(paginaActual, '-name')
+  }
 }
 
 
-botonPrimeraPagina.onclick = () =>{
+botonPrimeraPagina.onclick = () => {
   paginaActual = 0
-  creaTarjetasComics(paginaActual,'title')
+  if (seleccionTipo.value === "comics" && seleccionOrden.value === "a-z") {
+    creaTarjetasComics(paginaActual, 'title')
+  }
+  else if (seleccionTipo.value === "comics" && seleccionOrden.value === "z-a") {
+    creaTarjetasComics(paginaActual, '-title')
+  }
+  else if (seleccionTipo.value === "personajes" && seleccionOrden.value === "a-z") {
+    creaTarjetasPersonajes(paginaActual, 'name')
+  } else {
+    creaTarjetasPersonajes(paginaActual, '-name')
+  }
 }
 
 
-botonUltimaPagina.onclick = () =>{
- 
-  paginaActual= (total - (total%20))/20
-  creaTarjetasComics(paginaActual,'title')
+botonUltimaPagina.onclick = () => {
+
+  paginaActual = (total - (total % 20)) / 20
+  if (seleccionTipo.value === "comics" && seleccionOrden.value === "a-z") {
+    creaTarjetasComics(paginaActual, 'title')
+  }
+  else if (seleccionTipo.value === "comics" && seleccionOrden.value === "z-a") {
+    creaTarjetasComics(paginaActual, '-title')
+  }
+  else if (seleccionTipo.value === "personajes" && seleccionOrden.value === "a-z") {
+    creaTarjetasPersonajes(paginaActual, 'name')
+  } else {
+    creaTarjetasPersonajes(paginaActual, '-name')
+  }
 }
