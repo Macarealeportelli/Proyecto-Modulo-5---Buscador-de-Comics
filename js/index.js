@@ -22,6 +22,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
       console.log('busco comics por texto')
       comics = data.data.results
 
+      // const total = data.data.total
       const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
       seccionTarjetas.innerHTML = ''
@@ -45,6 +46,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
     .then((data) => {
       console.log(data)
       comics = data.data.results
+     
 
       const seccionTarjetas = document.querySelector(".contenedor-tarjetas");
 
@@ -155,3 +157,39 @@ botonBuscar.onclick = () => {
  
 }
 
+// ******************************************** FUNCIONALIDAD DEL PAGINADO ************************************************
+
+const botonPrimeraPagina = document.getElementById('primera-pagina');
+const botonPaginaAnterior = document.getElementById('pagina-anterior');
+const botonSiguientePagina = document.getElementById('siguiente-pagina');
+const botonUltimaPagina = document.getElementById('ultima-pagina');
+
+
+// console.log(botonPaginaAnterior)
+// console.log(botonPrimeraPagina)
+// console.log(botonSiguientePagina)
+// console.log(botonUltimaPagina)
+
+botonSiguientePagina.onclick = () =>{
+  paginaActual++
+  creaTarjetasComics(paginaActual, 'title')
+}
+
+
+botonPaginaAnterior.onclick = () =>{
+  paginaActual--
+  creaTarjetasComics(paginaActual, 'title')
+}
+
+
+botonPrimeraPagina.onclick = () =>{
+  paginaActual = 0
+  creaTarjetasComics(paginaActual,'title')
+}
+
+
+botonUltimaPagina.onclick = () =>{
+ 
+  paginaActual= (total - (total%20))/20
+  creaTarjetasComics(paginaActual,'title')
+}

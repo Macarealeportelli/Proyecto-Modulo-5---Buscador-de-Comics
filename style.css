@@ -80,6 +80,27 @@ footer h2 {
   margin: 10px;
 }
 
+.paginado {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+.paginado .boton-paginado {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+}
+.paginado .boton-paginado :hover {
+  background-color: red;
+}
+
 header, footer {
   display: flex;
   justify-content: center;
@@ -141,7 +162,7 @@ header, footer {
 }
 .contenedor-buscador .filtros-busqueda .buscador-input {
   border: 0;
-  margin-right: 20px;
+  margin-right: 60px;
   border-bottom: 2px solid #151515;
   width: 120%;
   padding: 5px 35px;
@@ -158,11 +179,12 @@ header, footer {
   top: 540px;
 }
 .contenedor-buscador .filtros-busqueda .busquedas-por {
-  width: 40%;
+  width: 50%;
   padding: 5px 35px;
-  margin-left: 10px;
+  margin-left: 150px;
   font-weight: 500;
   display: flex;
+  position: relative;
   justify-content: space-between;
 }
 .contenedor-buscador .filtros-busqueda button {
