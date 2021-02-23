@@ -30,7 +30,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
         comics.map((comic) => {
 
           seccionTarjetas.innerHTML += `
-      <article>
+      <article id="comic-card">
       <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
       <div class="comic-title">${comic.title}</div>
       </article> 
@@ -55,7 +55,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
         comics.map((comic) => {
 
           seccionTarjetas.innerHTML += `
-      <article>
+      <article id="comic-card">
       <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
       <div class="comic-title">${comic.title}</div>
       </article> 
@@ -236,3 +236,9 @@ botonUltimaPagina.onclick = () => {
     creaTarjetasPersonajes(paginaActual, '-name')
   }
 }
+
+// ******************************************* REVIEW TARJETAS ******************************************************
+
+const tarjetaComic = document.getElementById('comic-card');
+
+console.log(tarjetaComic)

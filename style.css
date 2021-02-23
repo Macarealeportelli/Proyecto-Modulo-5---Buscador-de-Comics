@@ -10,11 +10,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 footer, header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
+  color: whitesmoke;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
 }
 
 header {
@@ -55,6 +81,30 @@ footer, header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
+  color: whitesmoke;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
 }
 
 footer {
@@ -108,6 +158,30 @@ header, footer {
   flex-direction: column;
 }
 
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
+  color: whitesmoke;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
+}
+
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -143,6 +217,30 @@ header, footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
+  color: whitesmoke;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
 }
 
 .contenedor-buscador {
@@ -208,36 +306,88 @@ header, footer {
   flex-direction: column;
 }
 
-.contenedor-tarjetas {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
-  padding: 10px;
-}
-.contenedor-tarjetas article {
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
   display: flex;
   flex-direction: column;
   width: calc(100% / 6 - 2 * 10px);
   height: 250px;
   margin: 20px;
 }
-.contenedor-tarjetas article .image-character {
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
   height: 100%;
   transition: 0.2s;
   border-bottom: 3px solid red;
 }
-.contenedor-tarjetas article .image-character img {
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.contenedor-tarjetas article .character-name {
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
   color: whitesmoke;
   padding: 16px 24px 17px 20px;
   background-color: #151515;
   transition: 0.2s;
 }
 
+.contenedor-tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  padding: 10px;
+}
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article, .contenedor-tarjetas article article {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character, .contenedor-tarjetas article article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .image-character img, .contenedor-tarjetas article article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review .tarjetas-personajes article .character-name, .contenedor-tarjetas article article .character-name {
+  color: whitesmoke;
+  padding: 16px 24px 17px 20px;
+  background-color: #151515;
+  transition: 0.2s;
+}
+
+.contenedor-review {
+  width: 100%;
+  height: auto;
+}
+.contenedor-review .comic-review {
+  max-width: 350px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor-review .comic-review img {
+  width: 100%;
+}
+.contenedor-review .personajes-review {
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-review .personajes-review .contenedor-personajes-review {
+  display: flex;
+  flex-wrap: wrap;
+}
 * {
   margin: 0;
 }

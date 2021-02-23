@@ -1,0 +1,27 @@
+@import "../abstracts/abstracts.scss";
+
+.contenedor-review {
+  width: 100%;
+  height: auto;
+  .comic-review {
+    max-width: 350px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    img {
+      width: 100%;
+    }
+  }
+  .personajes-review {
+    display: flex;
+    flex-direction: column;
+    .contenedor-personajes-review {
+      display: flex;
+      flex-wrap: wrap;
+
+      .tarjetas-personajes {
+        @extend %tarjetas-personajes;
+      }
+    }
+  }
+}
