@@ -36,6 +36,44 @@ const creaTarjetasComics = (paginaActual, orden) => {
       </article> 
       `;
 
+          // ******************************************* REVIEW TARJETAS ******************************************************
+
+          const tarjetaComic = document.getElementById('comic-card');
+          const contenedorComics = document.getElementsByClassName('contenedor-tarjetas');
+          const contenedorReview = document.getElementsByClassName('contenedor-review');
+
+          console.log(tarjetaComic)
+
+         
+
+          // const tarjetaReview = () => {
+          //   const seccionTarjetasReview = document.querySelector('.contenedor-review');
+
+          //   seccionTarjetasReview.innerHTML = `
+          //   <div id="comic-review">
+          //   <div class="imagen-review"><img src="" alt=""></div>
+          //   <div>
+          //     <h2>titulo</h2>
+          //     <h3>Publicado:</h3>
+          //     <p>fecha</p>
+          //     <h3>Guionistas:</h3>
+          //     <p>nombres</p>
+          //     <h3>Descripción:</h3>
+          //     <p>bla bla</p>
+          //   </div>
+          // </div>
+          // <div class="personajes-review">
+          //     <h2>Personajes</h2>
+          //     <div class="contenedor-personajes-review">
+          //         <div class="tarjetas-personajes"> Tarjetas de personajes</div></div>
+          // </div>`
+
+          //   tarjetaComic.onclick = () => {
+          //     contenedorComics.classList.add('hidden');
+          //     contenedorReview.classList.remove('hidden');
+          //   }
+          // }
+          // tarjetaReview()
         })
       })
   }
@@ -237,8 +275,3 @@ botonUltimaPagina.onclick = () => {
   }
 }
 
-// ******************************************* REVIEW TARJETAS ******************************************************
-
-const tarjetaComic = document.getElementById('comic-card');
-
-console.log(tarjetaComic)
