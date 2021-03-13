@@ -1,17 +1,24 @@
 @import "../abstracts/abstracts.scss";
 
-.contenedor-review {
-  width: 100%;
+#contenedor-review {
+  width: 500px;
   display: flex;
   justify-content: space-between;
-
-  .comic-review {
+  .imagen-review {
+    max-width: 250px;
+    width: 200px;
+    margin-right: 10px;
+     
+    img {
+      width: 100%;
+    
+    }
+  }
+  .info-principal {
     max-width: 350px;
     margin-right: 50px;
   }
-  .imagen-review {
-    width: 100%;
-  }
+
   .personajes-review {
     display: flex;
     margin: 10px;

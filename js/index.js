@@ -55,7 +55,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
 
                 seccionTarjetas.innerHTML = `<div id="contenedor-review">
                
-                <div class="imagen-review"><img src="${comicSeleccionado.thumbnail.path}" alt=""></div>
+                <div class="imagen-review"><img src="${comicSeleccionado.thumbnail.path}.${comicSeleccionado.thumbnail.extension}" alt=""></div>
                 <div id='info-principal'>
                 <h2>${comicSeleccionado.title}</h2>
                   <h3>Publicado:</h3><p>${fechaCortada}</p>
@@ -63,7 +63,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
                   <h3>Descripción:</h3> <p>${comicSeleccionado.description}</p>
                 </div>
                 </div>  
-                <div class="personajes-review"></div>`;
+                <div class="personajes-review"> <h3>Personajes</h3></div>`;
 
                 fetch(`${urlBaseComics}/${tarjeta.dataset.id}/characters?apikey=${apiKey}`)
                 .then((res)=> {return res.json()})
