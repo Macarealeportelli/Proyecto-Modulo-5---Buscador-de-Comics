@@ -1,32 +1,42 @@
 @import "../abstracts/abstracts.scss";
 
-#contenedor-review {
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-  .imagen-review {
-    max-width: 250px;
-    width: 200px;
-    margin-right: 10px;
-     
-    img {
-      width: 100%;
+.review {
+  max-width: 800px;
+  margin: 20px;
+
+  #contenedor-review {
+    width: 500px;
     
+    display: flex;
+    justify-content: space-between;
+
+    .imagen-review {
+      max-width: 200px;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+      }
     }
-  }
-  .info-principal {
-    max-width: 350px;
-    margin-right: 50px;
+    .info-principal {
+      max-width: 600px;
+      margin-right: 50px;
+    }
   }
 
   .personajes-review {
     display: flex;
-    margin: 10px;
-    flex-wrap: wrap;
+    margin-right: 10px;
+
+    h3 {
+      margin-top: 15px;
+      margin-bottom: 20px;
+    }
 
     article {
       display: flex;
       flex-direction: column;
+      text-align: center;
       width: calc(100% / 6 - 2 * 10px);
       height: 250px;
       margin: 20px;
@@ -45,7 +55,7 @@
 
       .character-name {
         color: whitesmoke;
-        padding: 16px 24px 17px 20px;
+        padding: 10px;
         background-color: #151515;
         transition: 0.2s;
       }
