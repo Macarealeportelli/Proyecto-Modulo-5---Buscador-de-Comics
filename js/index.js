@@ -63,9 +63,9 @@ const creaTarjetasComics = (paginaActual, orden) => {
                   <h3>Guionistas:</h3> <p>${comicSeleccionado.creators.items[0].name}</p>
                   <h3>Descripción:</h3> <p>${comicSeleccionado.description}</p>
                 </div>
-                </div>  
+                </div> 
+                <h3>Personajes</h3> 
                 <div class="personajes-review"> 
-                <h3>Personajes</h3>
                 </div>
                 </div>`;
 
@@ -148,8 +148,9 @@ const creaTarjetasComics = (paginaActual, orden) => {
                 <h3>Descripción:</h3> <p>${comicSeleccionado.description}</p>
               </div>
               </div>  
-              <div class="personajes-review"> 
               <h3>Personajes</h3>
+              <div class="personajes-review"> 
+              
               </div>
               </div>`;
 
@@ -204,34 +205,68 @@ const creaTarjetasPersonajes = (paginaActual, orden) => {
         personajes.map((personaje) => {
 
           seccionTarjetas.innerHTML += `
-        <article id='tarjeta-personaje'>
+        <article id='tarjeta-personaje' data-id=${personaje.id}>
         <div class="image-character"><img src="${personaje.thumbnail.path}.jpg" alt=""></div>
         <div class="character-name">${personaje.name}</div>
         </article> 
         `;
 
-        
-        const reviewTarjetasPersonajes = () => {
-          const tarjetasPersonajes = document.querySelectorAll('#tarjeta-personaje')
-          tarjetasPersonajes.forEach((tarjeta) => {
-            tarjeta.onclick = () => {
-              console.log('hola soy un personaje, me hicieron click')
-              seccionTarjetas.innerHTML ='';
 
-              fetch(`${urlBasePersonajes}/${tarjeta.dataset.id}?apikey=${apiKey}`)
-              .then((res)=>{return res.json()})
-              .then((info)=>{
-                // let personajeSeleccionado = info.data.results[0];
+          const reviewTarjetasPersonajes = () => {
+            const tarjetasPersonajes = document.querySelectorAll('#tarjeta-personaje')
+            tarjetasPersonajes.forEach((tarjeta) => {
+              tarjeta.onclick = () => {
+                console.log('hola soy un personaje, me hicieron click')
+                seccionTarjetas.innerHTML = '';
 
-                console.log('muestro info', info)
-              })
-            }
-          })
+                fetch(`${urlBasePersonajes}/${tarjeta.dataset.id}?apikey=${apiKey}`)
+                  .then((res) => { return res.json() })
+                  .then((info) => {
+                    let personajeSeleccionado = info.data.results[0];
 
-        }
+                    console.log(personajeSeleccionado)
+                    seccionTarjetas.innerHTML = `<div class='review' >
+               
+                    <div id="contenedor-review">
+                    <div class="imagen-review"><img src="${personajeSeleccionado.thumbnail.path}.${personajeSeleccionado.thumbnail.extension}" alt=""></div>
+                    <div id='info-principal'>
+                    <h2>${personajeSeleccionado.name}</h2>
+                    <p>${personajeSeleccionado.description}</p>
+                    </div>
+                    </div>  
+                    <h3>Comics</h3>
+                    <div class="comics-review"> 
+                    
+                    </div>
+                    </div>`;
 
-        reviewTarjetasPersonajes();
-         
+                    fetch(`${urlBasePersonajes}/${tarjeta.dataset.id}/comics?apikey=${apiKey}`)
+                      .then((res) => { return res.json() })
+                      .then((info) => {
+
+                        console.log('muestro info dentro de comics', info)
+                        let listaDeComics = info.data.results;
+                        console.log('lista de comics', listaDeComics)
+                        const seccionComics = document.querySelector('.comics-review');
+                        listaDeComics.map((comic) => {
+
+                          seccionComics.innerHTML += `
+                          <article id="comic-card" data-id=${comic.id} class="card">
+                          <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
+                          <div class="comic-title">${comic.title}</div>
+                          </article> 
+                        `;
+                        })
+                      })
+                  })
+
+              }
+
+            })
+
+
+          }
+          reviewTarjetasPersonajes();
         })
       })
   }
@@ -255,8 +290,8 @@ const creaTarjetasPersonajes = (paginaActual, orden) => {
         <div class="character-name">${personaje.name}</div>
         </article> 
         `;
-        
-        
+
+
         })
       })
 

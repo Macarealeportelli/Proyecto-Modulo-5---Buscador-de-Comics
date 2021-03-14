@@ -315,13 +315,13 @@ header, footer {
   max-width: 600px;
   margin-right: 50px;
 }
+.review h3 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
 .review .personajes-review {
   display: flex;
   margin-right: 10px;
-}
-.review .personajes-review h3 {
-  margin-top: 15px;
-  margin-bottom: 20px;
 }
 .review .personajes-review article {
   display: flex;
@@ -346,6 +346,12 @@ header, footer {
   padding: 10px;
   background-color: #151515;
   transition: 0.2s;
+}
+.review .comics-review {
+  display: flex;
+  margin-right: 10px;
+  max-width: 500px;
+  flex-wrap: wrap;
 }
 
 * {

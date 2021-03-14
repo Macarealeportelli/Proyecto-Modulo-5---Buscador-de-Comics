@@ -6,7 +6,7 @@
 
   #contenedor-review {
     width: 500px;
-    
+
     display: flex;
     justify-content: space-between;
 
@@ -24,14 +24,14 @@
     }
   }
 
+  h3 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
   .personajes-review {
     display: flex;
     margin-right: 10px;
-
-    h3 {
-      margin-top: 15px;
-      margin-bottom: 20px;
-    }
 
     article {
       display: flex;
@@ -60,5 +60,12 @@
         transition: 0.2s;
       }
     }
+  }
+
+  .comics-review {
+    display: flex;
+    margin-right: 10px;
+    max-width: 500px;
+    flex-wrap: wrap;
   }
 }
