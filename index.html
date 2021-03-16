@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+
     <title>Ada Comics</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div>
-            <h1>ADA COMICS</h1>
-        </div>
-        <div class="contenedor-imagen-header"></div>
+      <div>
+        <h1>ADA COMICS</h1>
+      </div>
+      <div class="contenedor-imagen-header"></div>
     </header>
 
     <section class="seccion-principal">
-
-        <div class= "contenedor-buscador">
-            <h2>Búsqueda</h2>
-            <div class="filtros-busqueda">
-                <div>
-                    <input id="busqueda-textual" class="buscador-input" type="text" placeholder="Ingresá tu Búsqueda" >
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="busquedas-por" >
-                    <div>
-                        <label for="">TIPO</label>
-                        <select name="buscador-tipo" id="buscar-por-tipo">
-                            <option value="comics">Cómics</option>
-                            <option value="personajes">Personajes</option>
-                        </select>
-                        <label for="">ORDEN</label>
-                        <select name="buscador-orden" id="buscar-por-orden">
-                            <option value="a-z">A-Z</option>
-                            <option value="z-a">Z-A</option>
-                        </select>
-                    </div>
-                    <button id="boton-buscar">Buscar</button>
-                </div>
-                
+      <div class="contenedor-buscador">
+        <h2>Búsqueda</h2>
+        <div class="filtros-busqueda">
+          <div>
+            <input
+              id="busqueda-textual"
+              class="buscador-input"
+              type="text"
+              placeholder="Ingresá tu Búsqueda"
+            />
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="busquedas-por">
+            <div>
+              <label for="">TIPO</label>
+              <select name="buscador-tipo" id="buscar-por-tipo">
+                <option value="comics">Cómics</option>
+                <option value="personajes">Personajes</option>
+              </select>
+              <label for="">ORDEN</label>
+              <select name="buscador-orden" id="buscar-por-orden">
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+              </select>
             </div>
+            <button id="boton-buscar">Buscar</button>
+          </div>
         </div>
+      </div>
 
-        <div>
-            <h2>Resultados</h2>
-            <div class="contenedor-tarjetas"></div>
+      <div>
+        <h2>Resultados</h2>
+        <div class="contenedor-tarjetas">
+        <div class="personajes-review"></div>
         </div>
+      </div>
 
-       <div class="paginado">
-           <button id="primera-pagina" class="boton-paginado"><span><i class="fas fa-angle-double-left"></i></span></button>
-           <button id="pagina-anterior" class="boton-paginado"><span><i class="fas fa-angle-left"></i></span></button>
-           <button id="siguiente-pagina" class="boton-paginado"><span><i class="fas fa-angle-right"></i></span></button>
-           <button id="ultima-pagina" class="boton-paginado"><span><i class="fas fa-angle-double-right"></i></span></button>
-       </div>
+      <div class="paginado">
+        <button id="primera-pagina" class="boton-paginado">
+          <span><i class="fas fa-angle-double-left"></i></span>
+        </button>
+        <button id="pagina-anterior" class="boton-paginado">
+          <span><i class="fas fa-angle-left"></i></span>
+        </button>
+        <button id="siguiente-pagina" class="boton-paginado">
+          <span><i class="fas fa-angle-right"></i></span>
+        </button>
+        <button id="ultima-pagina" class="boton-paginado">
+          <span><i class="fas fa-angle-double-right"></i></span>
+        </button>
+      </div>
     </section>
 
-<footer>
-    <h2>Hecho con <span><i class="fas fa-heart"></i></span>por MACA</h2>
-</footer>
-
-
-
+    <footer>
+      <h2>
+        Hecho con <span><i class="fas fa-heart"></i></span>por MACA
+      </h2>
+    </footer>
 
     <script src="js/index.js"></script>
-</body>
-
+  </body>
 </html>

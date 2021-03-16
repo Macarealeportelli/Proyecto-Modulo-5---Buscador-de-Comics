@@ -10,11 +10,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 footer, header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
 }
 
 header {
@@ -55,6 +65,14 @@ footer, header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
 }
 
 footer {
@@ -108,6 +126,14 @@ header, footer {
   flex-direction: column;
 }
 
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
+}
+
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -143,6 +169,14 @@ header, footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
 }
 
 .contenedor-buscador {
@@ -208,6 +242,14 @@ header, footer {
   flex-direction: column;
 }
 
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
+}
+
 .contenedor-tarjetas {
   display: flex;
   flex-wrap: wrap;
@@ -236,6 +278,80 @@ header, footer {
   padding: 16px 24px 17px 20px;
   background-color: #151515;
   transition: 0.2s;
+}
+
+header, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable {
+  color: grey;
+}
+
+.review {
+  max-width: 800px;
+  margin: 20px;
+}
+.review #contenedor-review {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+.review #contenedor-review .imagen-review {
+  max-width: 200px;
+  margin-right: 10px;
+}
+.review #contenedor-review .imagen-review img {
+  width: 100%;
+}
+.review #contenedor-review .info-principal {
+  max-width: 600px;
+  margin-right: 50px;
+}
+.review h3 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.review .personajes-review {
+  display: flex;
+  margin-right: 10px;
+}
+.review .personajes-review article {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: calc(100% / 6 - 2 * 10px);
+  height: 250px;
+  margin: 20px;
+}
+.review .personajes-review article .image-character {
+  height: 100%;
+  transition: 0.2s;
+  border-bottom: 3px solid red;
+}
+.review .personajes-review article .image-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.review .personajes-review article .character-name {
+  color: whitesmoke;
+  padding: 10px;
+  background-color: #151515;
+  transition: 0.2s;
+}
+.review .comics-review {
+  display: flex;
+  margin-right: 10px;
+  max-width: 500px;
+  flex-wrap: wrap;
 }
 
 * {
