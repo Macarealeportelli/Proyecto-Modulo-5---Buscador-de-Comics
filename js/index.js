@@ -13,6 +13,7 @@ let paginaActual = 0;
 let total = 0;
 
 const creaTarjetasComics = (paginaActual, orden) => {
+  // if (inputBuscador.value) { queda mejor 
   if (inputBuscador.value != '') {
     fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&titleStartsWith=${inputBuscador.value}`)
       .then((res) => {
@@ -20,6 +21,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
       })
       .then((data) => {
         // console.log(data)
+        // no dejes ni comentarios ni console log en una entrega!
         console.log('busco comics por texto')
         comics = data.data.results
 
@@ -29,6 +31,8 @@ const creaTarjetasComics = (paginaActual, orden) => {
         seccionTarjetas.innerHTML = ''
         comics.map((comic) => {
 
+          // el alt de una imagen solo se deja vacio cuando la imagen es 
+          // decorativa. aqui debe tener el titulo del comic
           seccionTarjetas.innerHTML += `
       <article id="comic-card" data-id=${comic.id} class="card">
       <div class="image-comic"><img src="${comic.thumbnail.path}.jpg" alt=""></div>
@@ -37,6 +41,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
       `;
 
           //*************************************REVIEW TARJETAS COMICS***********************************************************************
+        // esta funcion deberia estar afuera de este fetch
           const reviewTarjetasComics = () => {
             const tarjetas = document.querySelectorAll('.card')
             // console.log(tarjetas)
@@ -48,11 +53,20 @@ const creaTarjetasComics = (paginaActual, orden) => {
                   .then((res) => { return res.json() })
                   .then((info) => {
                     let comicSeleccionado = info.data.results[0];
+                    // seria mejor haber usado new Date aqui
                     let fecha = comicSeleccionado.dates[0].date;
                     let fechaCortada = fecha.slice(0, 10);
                     // console.log('muestro fecha', fecha);
                     // console.log('muestro info', info);
 
+                    // aca estas asumiendo que la api siempre te va a traer la data que necesitas, 
+                    // y no es asi. a veces la descripcion viene vacia, a veces la fecha no esta, 
+                    // y mas importante, a veces no hay array items dentro de creadores. 
+                    // en los dos primeros casos, vemos un null en tu pagina. en el caso de los creadores, 
+                    // directamente se rompe la vista de detalle
+                    // Nunca asumas que la api va a funcionar: siempre es recomendable dejar 
+                    // un campo default en caso de que falle. Por ejemplo
+                    // <h3>Descripción:</h3> <p>${comicSeleccionado.description || "Descripcion no encontrada"}</p>
                     seccionTarjetas.innerHTML = `<div class='review' >
                
                 <div id="contenedor-review">
@@ -87,6 +101,8 @@ const creaTarjetasComics = (paginaActual, orden) => {
                   </article> 
                   
                   `;
+
+                  // muuy desprolijo el identado aca 
                         })
 
                       })
@@ -100,6 +116,9 @@ const creaTarjetasComics = (paginaActual, orden) => {
       })
   }
   else {
+
+    // estas repitiendo muchisimo codigo entre el if y el else. 
+    // Fijate si hay manera de hacer esta funcion mas breve y clara
     fetch(`${urlBaseComics}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}`)
       .then((res) => {
         return res.json()
@@ -122,6 +141,7 @@ const creaTarjetasComics = (paginaActual, orden) => {
       `;
 
           const reviewTarjetasComics = () => {
+            // estas declarando la misma funcion dos veces, en el if y en el else!!
             const tarjetas = document.querySelectorAll('.card')
             // console.log(tarjetas)
             tarjetas.forEach((tarjeta) => {
@@ -189,6 +209,7 @@ creaTarjetasComics(0, 'title')
 
 const creaTarjetasPersonajes = (paginaActual, orden) => {
 
+  // preferible escribir if (inputBuscador.value) {
   if (inputBuscador.value != '') {
     fetch(`${urlBasePersonajes}?apikey=${apiKey}&offset=${paginaActual * comicsPorPagina}&orderBy=${orden}&nameStartsWith=${inputBuscador.value}`)
       .then((res) => {
@@ -350,6 +371,7 @@ const botonUltimaPagina = document.getElementById('ultima-pagina');
 
 botonSiguientePagina.onclick = () => {
   paginaActual++
+  // esta logica se repite una y otra vez en cada boton. tendria que estar en una funcion!
   if (seleccionTipo.value === "comics" && seleccionOrden.value === "a-z") {
     creaTarjetasComics(paginaActual, 'title')
   }

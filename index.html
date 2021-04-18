@@ -25,6 +25,7 @@
     <section class="seccion-principal">
       <div class="contenedor-buscador">
         <h2>Búsqueda</h2>
+        <!-- Faltaria una etiqueta form aqui -->
         <div class="filtros-busqueda">
           <div>
             <input
@@ -37,11 +38,13 @@
           </div>
           <div class="busquedas-por">
             <div>
+              <!-- el for deberia tener el id del select -->
               <label for="">TIPO</label>
               <select name="buscador-tipo" id="buscar-por-tipo">
                 <option value="comics">Cómics</option>
                 <option value="personajes">Personajes</option>
               </select>
+              <!-- idem aqui, el, for no deberia estar vacio -->
               <label for="">ORDEN</label>
               <select name="buscador-orden" id="buscar-por-orden">
                 <option value="a-z">A-Z</option>
